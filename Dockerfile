@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r req.txt
 
 COPY app .
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
