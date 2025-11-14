@@ -8,7 +8,7 @@ async def ping(request: Request):
     ip = request.client.host
     conn = await get_db()
     await conn.execute("INSERT INTO visits(ip) VALUES($1)", ip)
-    return "pong"
+    return 'pong'
 
 @app.get("/visits")
 async def visits():
