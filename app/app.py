@@ -1,9 +1,11 @@
 from fastapi import FastAPI, Request
 from db import get_db
+from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
 
-@app.get("/ping")
+@app.get("/ping",
+         response_class=PlainTextResponse)
 async def ping(request: Request):
     ip = request.client.host
     conn = await get_db()
